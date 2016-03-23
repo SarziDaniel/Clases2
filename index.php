@@ -5,6 +5,15 @@
 <body>
 	Daniel Sarzi
 	<?php
+	require_once "alumno.php"; 
+
+	//INCLUDE Se encarga de pegar el archivo.
+	//REQUIRE Se necesita el archivo.
+	//INCLUDE_ONCE SOLO TE PERMITE PERGAR EL ARCHIVO 1 VEZ.
+	//REQUIRE_ONCE
+
+
+
 	echo "<h1>Hola mundo</h1>";
 
 	$nombre="Daniel Sarzi";
@@ -55,7 +64,54 @@
 	echo "<br>";
 	var_dump($arrayNuevo);
 
+	echo "<br>---------------<br>";
 
+	$miObjeto=new stdclass();
+	$miObjeto->nombre="Daniel";
+	$miObjeto->apellido= "Sarzi";
+
+	$miObjeto->productos=$arrayProducto;
+
+	var_dump($miObjeto);
+	echo "<br>";
+
+	$arrayDeObjetos=array();
+	$arrayDeObjetos["Nombre"]="Daniel";
+	$arrayDeObjetos["Apellido"]="Sarzi";
+	$arrayDeObjetos["ArraydeProductos"]=$arrayProducto;
+
+	var_dump($arrayDeObjetos);
+
+	echo "<br>---------------<br>";
+	// class Alumno
+	// {
+
+	// 	public $nombre;
+	// 	public $apellido;
+
+	// 	public function Mostrar()
+	// 	{
+	// 		echo $this->nombre;
+	// 		echo $this->apellido;
+	// 	}
+
+	// 	public static function MostrarAlumno($unAlumno)
+	// 	{
+	// 		$unAlumno->Mostrar();
+	// 	}
+	// }
+
+	$nuevoAlumno=new Alumno();
+	$nuevoAlumno->nombre="Daniel";
+	$nuevoAlumno->apellido="Sarzi";
+
+	$nuevoAlumno->Mostrar();
+
+	echo "<br>";
+	Alumno::MostrarAlumno($nuevoAlumno);
+
+	echo "<br>";
+	var_dump($nuevoAlumno);
 
 ?>
 </body>
